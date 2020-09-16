@@ -1,1 +1,1 @@
-const element = <h1>Hello, world!</h1>;
+const people = [jef, djef, jeffrey, jefferson, jeffstonn];

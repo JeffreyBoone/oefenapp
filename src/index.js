@@ -1,35 +1,30 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactDOM from 'react-dom';
-import './index.css';
-import './test'
+import React from 'react';
+import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
-import React, { useState } from 'react';
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Example = (props) => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+import Student from './student.js'; 
 
-  const toggle = () => setDropdownOpen(prevState => !prevState);
+const DropdownName = 'Menu';
+const posts = [
+  {id: 1, title: 'title 1', content: 'content1'},
+  {id: 2, title: 'title 2', content: 'content2'},
+  {id: 3, title: 'title 3', content: 'content3'},
+  {id: 4, title: 'title 4', content: 'content4'}
+];
 
-  return (
-    <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-      <DropdownToggle caret>
-        Dropdown
-        </DropdownToggle>
-      <DropdownMenu>
-        <DropdownItem header>Header</DropdownItem>
-        <DropdownItem>Some Action</DropdownItem>
-        <DropdownItem disabled>Action (disabled)</DropdownItem>
-        <DropdownItem divider />
-        <DropdownItem>Foo Actionbar</DropdownItem>
-        <DropdownItem>Bar Action</DropdownItem>
-        <DropdownItem>Quo Action</DropdownItem>
-      </DropdownMenu>
-    </Dropdown>
-  );
-}
+  const listItems = posts.map((post) =>
+  <DropdownItem key = {post.id} >{post.title}</DropdownItem>
+);
 
-export default Example;
-
-
-ReactDOM.render(<Example/>, document.getElementById('root'));
+ReactDOM.render(
+<div>
+  <Student />
+  <UncontrolledDropdown>
+    <DropdownToggle caret>{DropdownName}
+      <DropdownMenu>{listItems}</DropdownMenu>
+    </DropdownToggle>
+  </UncontrolledDropdown>
+</div>, 
+  document.getElementById('root'));
