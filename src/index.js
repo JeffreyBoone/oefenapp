@@ -21,7 +21,7 @@ const Example = (props) => {
         <DropdownItem>Some Action</DropdownItem>
         <DropdownItem disabled>Action (disabled)</DropdownItem>
         <DropdownItem divider />
-        <DropdownItem>Foo Action</DropdownItem>
+        <DropdownItem>Foo Actionbar</DropdownItem>
         <DropdownItem>Bar Action</DropdownItem>
         <DropdownItem>Quo Action</DropdownItem>
       </DropdownMenu>
